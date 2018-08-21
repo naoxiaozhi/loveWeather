@@ -1,0 +1,79 @@
+/**index.wxss**/
+.container{
+  padding: 0 2%;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.l {
+    float: left;
+}
+.r {
+    float: right;
+}
+.searchbox {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 45rpx;
+    margin-top: 45rpx;
+}
+.searchinput {
+  width: 100%;
+  font-size: 24rpx;
+  padding: 0rpx 40rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  border: 1px solid #f2f2f2;  
+  border-radius: 10rpx;
+}
+.searchbtn {
+    font-size: 28rpx;
+    width: 18%;
+    padding: 0;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #fff;
+    background-color: #4183c4;
+}
+.searchlist {
+  font-size: 32rpx;
+  color: #666;
+  line-height: 72rpx;
+  text-align: center;
+}
+.title{
+  font-size: 32rpx;
+  color: #333;
+}
+.city-list,.search-list{
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.city-item{
+  font-size: 28rpx;
+  color: #333;
+  padding: 10rpx 36rpx;
+  background-color: #f7f7f7;
+  /* white-space: nowrap; */
+  margin-right: 20rpx;
+  margin-bottom: 16rpx;
+  border-radius: 48rpx;
+}

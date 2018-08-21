@@ -1,0 +1,61 @@
+<view class='container'>
+  <view class='loading' wx:if='{{loading}}'>
+    <image class='loading-img' src='loading.gif'></image>
+  </view>
+  <view wx:if='{{!loading}}'>
+      <view class='banner'>
+    <view class='banner-bg'>
+      <image class='banner-bg-img' src='{{imageUrl}}.jpg'></image>
+    </view>
+    <view class='banner-context'>
+      <view class='city-location' bindtap='locationChange'>
+        <image class='icon-location' src='location.png'></image>
+        <text wx:if='{{weather.basic.parent_city == weather.basic.location}}'>{{weather.basic.parent_city}}</text>
+        <text wx:if='{{weather.basic.parent_city != weather.basic.location}}'>{{weather.basic.parent_city}}·{{weather.basic.location}}</text>
+      </view>
+      <view class='tem-box'>
+        <text class='city-tem'>{{weather.now.tmp}}</text>
+        <text class='city-tem-unit'>℃</text>
+      </view>
+      <view class='city-info'>
+        <text>{{weather.now.cond_txt}}</text>
+        <block wx:if='{{bearth}}'>
+          <text class='city-info-line'>|</text>
+          <text>空气{{bearth.air_now_city.qlty}} {{bearth.air_now_city.aqi}}</text>
+          <view>{{weather.now.wind_dir}} {{weather.now.wind_sc}}级</view>
+        </block>
+        <block wx:if='{{!bearth}}'>
+        <text class='city-info-line'>|</text>
+        <text>{{weather.now.wind_dir}} {{weather.now.wind_sc}}级</text>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class='clothing block'>
+    <view class='clothing-box'>
+      <text class='tit'>穿衣指数</text>
+      <view class='clothing-desc block-content'><text class='c3'></text>今天整体感觉{{life.brf}}，{{life.txt}}</view>
+    </view>
+  </view>
+  <view wx:if='{{trend}}' class='trend block'>
+      <text class='tit'>气温变化</text>
+       <view class='canvas-box'> 
+        <canvas canvas-id='lineCanvas' style='width:100%;'></canvas>
+       </view> 
+  </view>
+  <view class='future block'>
+    <text class='tit'>未来一周气温</text>
+    <block class='future-list block-content' wx:for='{{future.daily_forecast}}' wx:key='{{index}}'>
+        <view class='future-item'>
+          <text class='date-txt'>{{day[index]}}</text>
+          <view class='date-info'>
+            <image class='icon-image' src='https://cdn.heweather.com/cond_icon/{{item.cond_code_d}}.png'></image>
+            <text>{{item.cond_txt_d}} / {{item.cond_txt_n}}</text>
+          </view>
+          <text class='date-tem'>{{item.tmp_max}} / {{item.tmp_min}}℃</text>
+        </view>
+    </block>
+  </view>
+  <view class='tips'>公用API由和风天气提供</view>
+  </view>
+</view>

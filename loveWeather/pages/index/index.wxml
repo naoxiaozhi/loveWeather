@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+   <view class="searchbox">
+    <input type="text" class="searchinput l" bindinput="inputChange" value="{{keyword}}"/>
+  </view>
+  <block wx:if="{{showlist}}">
+    <view class='title'>搜索结果</view>
+    <view class="search-list">
+      <view class='city-item l' id="{{item.cid}}" wx:for="{{searchlist}}" wx:key="{{index}}" bindtap="checkCity">{{item.location}}</view>
+    </view>
+  </block>
+  <block wx:if="{{!showlist}}">
+    <text class='title'>热门城市</text>
+    <view class='city-list'> 
+        <view class='city-item l' id="{{item.cid}}" wx:for="{{hot}}" wx:key="{{index}}" bindtap="checkCity">{{item.location}}</view>
+    </view>
+  </block>
+</view> 
