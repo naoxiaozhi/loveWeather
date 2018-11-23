@@ -5,10 +5,11 @@
     "pages/logs/logs"
   ],
   "window":{
-    "backgroundTextStyle":"dark",
+    "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "rgba(255,255,255,0.6)",
-    "navigationBarTitleText": "天气",
-    "navigationBarTextStyle":"black",
-    "backgroundColor":"#000"
+    "navigationBarTitleText": "爱看天气",
+    "navigationBarTextStyle":"white",
+    "backgroundColor":"#000",
+    "navigationStyle": "custom"
   }
 }

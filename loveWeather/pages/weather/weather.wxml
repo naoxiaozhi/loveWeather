@@ -9,13 +9,17 @@
     </view>
     <view class='banner-context'>
       <view class='city-location' bindtap='locationChange'>
-        <image class='icon-location' src='location.png'></image>
+        <view class='location-box'>
+          <image class='icon-location' src='location.png'></image>
+        </view>
         <text wx:if='{{weather.basic.parent_city == weather.basic.location}}'>{{weather.basic.parent_city}}</text>
         <text wx:if='{{weather.basic.parent_city != weather.basic.location}}'>{{weather.basic.parent_city}}·{{weather.basic.location}}</text>
       </view>
       <view class='tem-box'>
-        <text class='city-tem'>{{weather.now.tmp}}</text>
-        <text class='city-tem-unit'>℃</text>
+        <view class='city-tem'>
+          {{weather.now.tmp}}
+          <text class='city-tem-unit'>℃</text>
+        </view>
       </view>
       <view class='city-info'>
         <text>{{weather.now.cond_txt}}</text>

@@ -76,10 +76,10 @@ Page({
       complete: function () {
         if (_that.data.position) {
           wx.request({
-            url: 'https://free-api.heweather.com/s6/search?location=' + _that.data.position.x + ',' + _that.data.position.y + '&key=' + key,
+            url: 'https://search.heweather.com/find?location=' + _that.data.position.x + ',' + _that.data.position.y + '&key=' + key,
             success: function (res) {
               _that.setData({
-                location: res.data.HeWeather6[0].basic.cid
+                location: res.data.HeWeather6[0].basic[0].cid
               })
               _that.init()
             }
